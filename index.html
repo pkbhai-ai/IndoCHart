@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndoChart | Premium Economic Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <h1>IndoChart</h1>
+      </div>
+      <nav class="nav-menu">
+        <button class="nav-item active">Dashboard</button>
+        <button class="nav-item">State Analysis</button>
+        <button class="nav-item">Sector Mix</button>
+      </nav>
+      <div class="view-toggles">
+        <p class="toggle-label">Engine Mode</p>
+        <button id="btn-mode-current" class="toggle-btn active">Current View</button>
+        <button id="btn-mode-prev" class="toggle-btn">Previous Year Compare</button>
+        <button id="btn-mode-yoy" class="toggle-btn">YoY Delta</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-header">
+        <div class="search-container">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="state-search" placeholder="Search state by name or code (e.g., MH)...">
+        </div>
+        <div class="header-badges">
+          <span class="badge quality-badge">Data Quality: High Confidence</span>
+          <span class="badge dev-badge">Developed by CR Prince</span>
+        </div>
+      </header>
+
+      <div class="dashboard-grid">
+        
+        <div class="kpi-panel">
+          <div class="kpi-card glass-panel" id="kpi-india-gdp">
+            <h3>India GDP (Latest)</h3>
+            <div class="kpi-value" id="india-gdp-val">--</div>
+            <div class="kpi-delta" id="india-gdp-delta">--</div>
+          </div>
+          <div class="kpi-card glass-panel" id="kpi-india-growth">
+            <h3>YoY Growth</h3>
+            <div class="kpi-value" id="india-growth-val">--</div>
+            <div class="kpi-delta" id="india-growth-delta">--</div>
+          </div>
+          <div class="kpi-card glass-panel insights-card">
+            <h3>Intelligence AI</h3>
+            <div class="typing-effect" id="ai-insight">Analyzing economic trajectory...</div>
+          </div>
+        </div>
+
+        <div class="chart-container glass-panel">
+          <div class="chart-header">
+            <h2>Macroeconomic Trajectory (USD Billions)</h2>
+          </div>
+          <div id="main-chart"></div>
+        </div>
+
+        <div class="bottom-grid">
+          <div class="state-list-panel glass-panel">
+            <div class="panel-header">
+              <h2>State Performance Hub</h2>
+              <span id="state-count" class="count-badge">0 States</span>
+            </div>
+            <div class="state-list" id="state-list-container">
+              </div>
+          </div>
+
+          <div class="analytics-panel glass-panel">
+            <h2>Sector Mix (Latest FY)</h2>
+            <div id="sector-chart"></div>
+            <div class="ranking-stats" id="ranking-stats-container">
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  
+  <footer class="app-footer">
+    <p>&copy; 2026 IndoChart. Developed by CR Prince.</p>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
 
